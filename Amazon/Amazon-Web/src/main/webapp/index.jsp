@@ -1,9 +1,10 @@
 <script language=javascript>
-function redirect(){
-  window.location = "https://www.amigosbusinesscorp.com";
-}
+  function redirect() {
+    window.location = "https://www.amigosbusinesscorp.com";
+  }
 </script>
 
-<body onload="redirect()">
-
+<body>
+  Stopped redirection of local site to https://www.amigosbusinesscorp.com
+  Now it will stay here only
 </body>
