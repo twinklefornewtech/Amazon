@@ -5,6 +5,7 @@
 </script>
 
 <body>
-  Stopped redirection of local site to https://www.amigosbusinesscorp.com
+	Changing this content to test trigger using Jenkinsfile in repository  
+	Stopped redirection of local site to https://www.amigosbusinesscorp.com
   Now it will stay here only
 </body>
