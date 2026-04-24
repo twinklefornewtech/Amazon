@@ -5,7 +5,7 @@
 </script>
 
 <body>
-	Changing this content to test trigger using Jenkinsfile in Amazon Folder  
+	Changing this content to test trigger using Jenkinsfile in SKY Folder  
 	Stopped redirection of local site to https://www.amigosbusinesscorp.com
   Now it will stay here only
 </body>
