@@ -8,10 +8,10 @@ pipeline{
                 git branch:"master",url:"https://github.com/twinklefornewtech/Amazon.git"
             }
         }
-        stage('Build for Amazon'){
+        stage('Build for SpringDemo'){
             steps{
-                dir('Amazon'){
-                    echo "Generating Build for Amazon..."
+                dir('SpringDemo'){
+                    echo "Generating Build for SpringDemo..."
                     sh "mvn clean install"
                 }
             }
@@ -19,13 +19,13 @@ pipeline{
     }
     post{
         success{
-            dir('Amazon/Amazon-Web/target'){
-                echo "Deploying to tomcat..."
-                sh 'curl -u admin:admin123 -T Amazon.war "http://localhost:8081/manager/text/deploy?path=/hookapp&update=true"'
+            dir('SpringDemo/target'){
+                echo "SpringDemo.jar generated..."
+                //sh 'curl -u admin:admin123 -T Amazon.war "http://localhost:8081/manager/text/deploy?path=/hookapp&update=true"'
             }
         }
         failure{
-            echo "Amazon Build failed"
+            echo "SpringDemo Build failed"
         }
     }
 }
