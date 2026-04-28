@@ -65,7 +65,7 @@ pipeline{
             }
             dir('SpringNew/Spring-Web/target'){
                 echo "Deploying to tomcat..."
-                sh 'curl -u admin:admin123 -T SpringNew.war "http://localhost:8081/manager/text/deploy?path=/SpringNew&update=true"'
+                sh 'curl -u admin:admin123 -T Spring-Web.war "http://localhost:8081/manager/text/deploy?path=/SpringNew&update=true"'
             }
             dir('SpringCore/target'){
                 echo "Generated jar for SpringCore..."
