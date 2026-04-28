@@ -10,8 +10,8 @@ pipeline{
         }
         stage('Build for Amazon'){
             steps{
-                dir('Amazon'){
-                    echo "Generating Build for Amazon..."
+                dir('SpringNew'){
+                    echo "Generating Build for SpringNew..."
                     sh "mvn clean install"
                 }
             }
@@ -19,13 +19,13 @@ pipeline{
     }
     post{
         success{
-            dir('Amazon/Amazon-Web/target'){
-                echo "Deploying to tomcat..."
-                sh 'curl -u admin:admin123 -T Amazon.war "http://localhost:8081/manager/text/deploy?path=/hookapp&update=true"'
+            dir('SpringNew/Spring-Web/target'){
+                echo "Deploying SpringNew to tomcat..."
+                sh 'curl -u admin:admin123 -T Spring.war "http://localhost:8081/manager/text/deploy?path=/SpringNew&update=true"'
             }
         }
         failure{
-            echo "Amazon Build failed"
+            echo "SpringNew Build failed"
         }
     }
 }
