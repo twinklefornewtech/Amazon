@@ -8,7 +8,7 @@ pipeline{
                 git branch:"master",url:"https://github.com/twinklefornewtech/Amazon.git"
             }
         }
-        stage('Build for Amazon'){
+        stage('Build for SpringNew'){
             steps{
                 dir('SpringNew'){
                     echo "Generating Build for SpringNew..."
