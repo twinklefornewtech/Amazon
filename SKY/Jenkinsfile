@@ -8,10 +8,10 @@ pipeline{
                 git branch:"master",url:"https://github.com/twinklefornewtech/Amazon.git"
             }
         }
-        stage('Build for Amazon'){
+        stage('Build for SKY'){
             steps{
-                dir('Amazon'){
-                    echo "Generating Build for Amazon..."
+                dir('SKY'){
+                    echo "Generating Build for SKY..."
                     sh "mvn clean install"
                 }
             }
@@ -19,13 +19,13 @@ pipeline{
     }
     post{
         success{
-            dir('Amazon/Amazon-Web/target'){
+            dir('SKY/SKY-Web/target'){
                 echo "Deploying to tomcat..."
-                sh 'curl -u admin:admin123 -T Amazon.war "http://localhost:8081/manager/text/deploy?path=/hookapp&update=true"'
+                sh 'curl -u admin:admin123 -T SKY.war "http://localhost:8081/manager/text/deploy?path=/SKY&update=true"'
             }
         }
         failure{
-            echo "Amazon Build failed"
+            echo "SKY Build failed"
         }
     }
 }
