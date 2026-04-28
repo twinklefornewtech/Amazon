@@ -1,11 +1,15 @@
 pipeline{
     agent any
+    options{
+        skipDefaultCheckout()
+    }
     
     stages{
         stage('git checkout'){
             steps{
                 echo "Cloning the code"
-                git branch:"master",url:"https://github.com/twinklefornewtech/Amazon.git"
+                //git branch:"master",url:"https://github.com/twinklefornewtech/Amazon.git"
+                checkout scm
             }
         }
         stage('Build for Amazon'){
